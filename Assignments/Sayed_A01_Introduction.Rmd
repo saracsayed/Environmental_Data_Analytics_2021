@@ -1,6 +1,6 @@
 ---
 title: "Assignment 1: Introduction"
-author: "Student Name"
+author: Sara Sayed
 output: pdf_document
 geometry: margin=2.54cm
 ---
@@ -22,21 +22,21 @@ The completed exercise is due on <>.
 
 1. What are your previous experiences with data analytics, R, and Git? Include both formal and informal training.
 
-> Answer: 
+> Answer: I took ENV 710 last year which was my first experience with R. Other than that I took Advanced GIS last semester where we learned Python and used Git a bit.
 
 2. Are there any components of the course about which you feel confident?
 
-> Answer: 
+> Answer: I think I feel confident about ggplot??
 
 3. Are there any components of the course about which you feel apprehensive?
 
-> Answer: 
+> Answer: I haven't used R since fall 2019 so I hope I remember enough of the basics.
 
 
 ## 2) GitHub
 
 Provide a link below to your forked course repository in GitHub. Make sure you have pulled all recent changes from the course repository  and that you have updated your course README file. 
 
-> Answer: 
+> Answer: https://github.com/saracsayed/Environmental_Data_Analytics_2021.git
 
 
