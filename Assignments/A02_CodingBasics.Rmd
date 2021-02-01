@@ -31,17 +31,27 @@ This exercise accompanies the lessons in Environmental Data Analytics on coding 
 4. Insert comments in your code to describe what you are doing.
 
 ```{r}
-#1. I am creting a sequence of numbers that goes from 1 to 100 in increments of 4 then I set the create a variable with the sequence called Number_Seq
+#1. I am creating a sequence of numbers that goes 
+#from 1 to 100 in increments of 4 then I create a 
+#variable with the sequence called Number_Seq
+
 seq(1, 100, 4)
 Number_Seq<- seq(1,100,4)
 
-#2. I want to see the summary statistics of this sequence are so I use the mean and median function to calculate the mean, median and create a variable for each called Mean & Median
+#2. I want to see the summary statistics of this
+#sequence are so I use the mean and median function
+#to calculate the mean, median and create a variable
+#for each called Mean & Median
+
 Mean <- mean(Number_Seq)
 Mean
 Median <-median(Number_Seq)
 Median
 
-#3. I want to see if the mean is greater than the median so I write a code asking if the mean > median, the console provides the response
+#3. I want to see if the mean is greater than
+#the median so I write a code asking if the 
+#mean > median, the console provides the response
+
 Mean > Median
 
 ```
@@ -83,15 +93,25 @@ student_summary
 11. Apply your function to the vector with test scores that you created in number 5. 
 
 ```{r}
-#10. Created an ifelse statement to determine if a student passed or failed based on their test results. I used the string statement to determine the name of column I wanted in the data frame, then I wrote the ifelse statement with the conditions that if the student grade is more than 50, the student passes, but if not they fail
-str(student_summary)
-student_summary$Result<- ifelse (student_summary$"Student.Grade">50, "Pass", "Fail")
-print(student_summary)
+#10. Created an ifelse statement to determine if a student 
+#passed or failed based on their test results. I used the 
+#string statement to determine the name of column I wanted
+#in the data frame, then I wrote the ifelse statement with
+#the conditions that if the student grade is more than 50,
+#the student passes, but if not they fail
 
-#11 I selected the print function to show the datafram with the newly appended Result column in the data frame
+str(student_summary)
+x <- student_summary
+x$Result<- ifelse (x$"Student.Grade">50, "Pass", "Fail")
+
+#11 I applied the function to my data frame student_summary
+#Then printed the results to show it is now appended to my dataframe
+
+student_summary$Result<- ifelse (student_summary$"Student.Grade">50, "Pass", "Fail")
 print(student_summary)
 ```
 
 12. QUESTION: Which option of `if` and `else` vs. `ifelse` worked? Why?
 
-> Answer: I think both options worked because in order to run for the student to pass they needed a 50 (part of the if statement) and if their score was less than 50 then they failed.
+> Answer: I think the ifelse statement worked the because we were looking at a simple type of data that could be combined into one statement. If the data was
+more complicated I would created individual if and else statements.
