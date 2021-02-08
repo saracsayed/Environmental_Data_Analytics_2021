@@ -30,7 +30,7 @@ R treats objects differently based on their characteristics. For more informatio
 Define what each new piece of syntax does below (i.e., fill in blank comments). Note that the R chunk has been divided into sections (# at beginning of line, ---- at end)
 ```{r}
 # Vectors ----
-vector1 <- c(1,2,5.3,6,-2,4) # numeric vector
+vector1 <- c(1,2,5.3,6,-2,4) # numeric vector, have to be integers, we can extract values by their position use [] 
 vector1
 vector2 <- c("one","two","three") # character vector
 vector2
@@ -62,7 +62,7 @@ matrix4 <- matrix(cells, nrow = 2, ncol = 2, byrow = TRUE,
 matrix4
 
 # Lists ---- 
-list1 <- list(name = "Maria", mynumbers = vector1, mymatrix = matrix1, age = 5.3); list1
+list1 <- list(name = "Maria", mynumbers = vector1, mymatrix = matrix1, age = 5.3); list1 #Can mix datatypes
 list1[[2]]
 
 # Data Frames ----
@@ -93,25 +93,29 @@ Question: In the R chunk below, write "dataframe1$". Press `tab` after you type 
 Find a ten-day forecast of temperatures (Fahrenheit) for Durham, North Carolina. Create two vectors, one representing the high temperature on each of the ten days and one representing the low.
 
 ```{r}
-
+High <- c(53, 55, 54,49,53,56,53,42, 56, 54)
+Low <-c(25,41,32,32,28,36,26,16,22,21)
 ```
 
 Now, create two additional vectors that include the ten-day forecast for the high and low temperatures in Celsius. Use a function to create the two new vectors from your existing ones in Fahrenheit.
 
 ```{r}
-
+FtoC <- function(x){(x-32)*(5/9)}
+High_C <- FtoC(High)
+Low_C <- FtoC(Low)
 ```
 
 Combine your four vectors into a data frame and add informative column names.
 
 ```{r}
-
+Temps <- data.frame(High, Low, High_C, Low_C)
 ```
 
 Use the common functions `summary` and `sd` to obtain basic data summaries of the ten-day forecast. How would you call these functions differently for the entire data frame vs. a single column? Attempt to demonstrate both options below.
 
 ```{r}
-
+summary(Temps)
+sd(Temps)
 ```
 
 ### Date objects
