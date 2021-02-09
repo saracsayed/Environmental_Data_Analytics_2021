@@ -57,9 +57,9 @@ Note: each of these approaches utilize the package "ggplot2". We will be coverin
 
 Visualize count data for categorical variables. 
 
-```{r, fig.height = 3, fig.width = 4}
-ggplot(USGS.flow.data, aes(x = discharge.mean.approval)) +
-  geom_bar()
+  ```{r, fig.height = 3, fig.width = 4}
+  ggplot(USGS.flow.data, aes(x = discharge.mean.approval)) +
+    geom_bar() ##Counts of records in each category
 ```
 
 ### Histogram (function: geom_histogram)
@@ -67,22 +67,22 @@ ggplot(USGS.flow.data, aes(x = discharge.mean.approval)) +
 Visualize distributions of values for continuous numerical variables. What is happening in each line of code? Insert a comment above each line.
 
 ```{r, fig.height = 3, fig.width = 4}
-#
+#Counts by value intervals
 ggplot(USGS.flow.data) +
   geom_histogram(aes(x = discharge.mean))
 
 #
 ggplot(USGS.flow.data) +
-  geom_histogram(aes(x = discharge.mean), binwidth = 10)
+  geom_histogram(aes(x = discharge.mean), binwidth = 10) #binwidth sets the width of the bins
 
 #
 ggplot(USGS.flow.data) +
-  geom_histogram(aes(x = discharge.mean), bins = 20)
-
+  geom_histogram(aes(x = discharge.mean), bins = 20) #set the number of bins
+## You should generally use between 5-20 bins
 #
 ggplot(USGS.flow.data, aes(x = discharge.mean)) +
   geom_histogram(binwidth = 10) + 
-  scale_x_continuous(limits = c(0, 500))
+  scale_x_continuous(limits = c(0, 500)) # set a scale for the x axis, zoom in to your histogram
   
 #
 ggplot(USGS.flow.data) +
@@ -98,7 +98,7 @@ An alternate to a histogram is a frequency polygon graph (distributions of value
 ggplot(USGS.flow.data) +
   geom_freqpoly(aes(x = gage.height.mean), bins = 50) +
   geom_freqpoly(aes(x = gage.height.min), bins = 50, color = "darkgray") +
-  geom_freqpoly(aes(x = gage.height.max), bins = 50,  lty = 2) +
+  geom_freqpoly(aes(x = gage.height.max), bins = 50,  lty = 2) + #lty = line type
   scale_x_continuous(limits = c(0, 10))
 
 #
