@@ -27,7 +27,7 @@ getwd()
 library(tidyverse)
 #install.packages(lubridate)
 library(lubridate)
-NTL.phys.data <- read.csv("./Data/Raw/NTL-LTER_Lake_ChemistryPhysics_Raw.csv", stringsAsFactors = TRUE)
+NTL.phys.data <- read.csv("./Data/Raw/NTL-LTER_Lake_ChemistryPhysics_Raw.csv", stringsAsFactors = TRUE) #string as factors = true makes it possible to read characters in the summary
 
 colnames(NTL.phys.data)
 head(NTL.phys.data)
@@ -63,20 +63,20 @@ vignette("dplyr")
 Filtering allows us to choose certain rows (observations) in our dataset.
 
 Here are the relevant commands used in the `filter` function. Add some notes to designate what these commands mean. 
-`==`
-`!=`
+`==` # compare to a specific value
+`!=` # check if variables are different
 `<`
 `<=`
 `>`
 `>=`
-`&`
-`|`
+`&` # Aggregate columns
+`|` # Set if you want one or the other for multiple columns
 
 ```{r}
-class(NTL.phys.data$lakeid)
+class(NTL.phys.data$lakeid) #when you're filtering you have to make sure the classes match up
 class(NTL.phys.data$depth)
 
-# matrix filtering
+# matrix filtering, square brackets
 NTL.phys.data.surface1 <- NTL.phys.data[NTL.phys.data$depth == 0,]
 
 # dplyr filtering
@@ -109,6 +109,7 @@ NTL.phys.data.JunethruOctober4 <- filter(NTL.phys.data, daynum %in% c(152:304))
 
 # Exercise: 
 # filter NTL.phys.data for the year 1999
+NTL.phys.data.1999 <- filter(NTL.phys.data,sampledate == 1999)
 # what code do you need to use, based on the class of the variable?
 class(NTL.phys.data$year4)
 
