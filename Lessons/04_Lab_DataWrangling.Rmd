@@ -56,17 +56,18 @@ NTL.phys.data.JunethruOctober <- filter(NTL.phys.data, daynum %in% c(152:304))
 
 # Exercise 1: 
 # filter NTL.phys.data for the year 1999
+NTL.phys.data <- filter(NTL.phys.data, year4 %in% c("1999"))
 # what code do you need to use, based on the class of the variable?
 
 
 # Exercise 2: 
 # filter NTL.phys.data for Tuesday Lake from 1990 through 1999.
-
+NTL.phys.data.Tuesday.90 <- filter(NTL.phys.data, lakename =="Tuesday Lake"" & year4 %in% (1990:1999) ))
 
 ```
 Question: Why don't we filter using row numbers?
 
-> Answer: 
+> Answer: It would mess up the dataset very easily
 
 ## Pipes
 
@@ -98,6 +99,11 @@ For gather we will use `pivot_longer` and for spread we will use `pivot_wider`.
 
 ```{r}
 #Exercise 5: gather irradiance data (measured in the water column and measured on the deck of the sampling boat) into one column using pivot_longer
+
+ex5 <- NTL.phys.data %>%
+  pivot_longer(c(irradianceWater, irradianceDeck),
+               names_to = "irradiance",
+               values_to = "rads")
 
 
 #Exercise 6: spread temperatureC into more than one column based on the depth
