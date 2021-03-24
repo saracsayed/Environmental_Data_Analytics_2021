@@ -466,8 +466,8 @@ mapview(sf_DurhamArmory,
 
 ```{r Measure the distance}
 #Use the st_distance command to compute the distance
-#the_distance <- st_distance(x = sf_DurhamArmory,
-#                            y = grainger_sfc)
+the_distance <- st_distance(x = sf_DurhamArmory,
+                            y = grainger_sfc)
 
 #Oh no, an error! We forgot to transform our Grainger Hall point to the same CRS as the Armory
 
